@@ -1,0 +1,3 @@
+Server(function() {
+    Meteor.methods({ });
+});

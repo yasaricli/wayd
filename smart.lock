@@ -1,0 +1,54 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "Planet": {},
+      "iron-router": {},
+      "gravatar": {},
+      "googleAnalytics": {},
+      "imagemagick": {}
+    },
+    "packages": {
+      "Planet": {
+        "git": "https://github.com/yasaricli/planet.git",
+        "tag": "v0.2.2",
+        "commit": "bcfc96a665c7ff785dcfa639aded110b7b7cc656"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
+      },
+      "gravatar": {
+        "git": "https://github.com/tmeasday/meteor-gravatar.git",
+        "tag": "v0.0.4",
+        "commit": "d1052ff4401725c23fb199c0e0a36e29b926bc22"
+      },
+      "googleAnalytics": {
+        "git": "https://github.com/yasaricli/googleAnalytics.git",
+        "tag": "v0.0.8",
+        "commit": "2c47f147d64554e870c7c02691d5c2efde040ee3"
+      },
+      "imagemagick": {
+        "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
+        "tag": "v0.1.2",
+        "commit": "d67bb926356d35cdff1a6d6c3c69750f3f54c059"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
+      },
+      "crypto-md5": {
+        "git": "https://github.com/oortcloud/meteor-crypto-md5.git",
+        "tag": "v3.1.2.2",
+        "commit": "75bbb3eeace302122d3554a6212a6fe92553fa18"
+      },
+      "crypto-base": {
+        "git": "https://github.com/oortcloud/meteor-crypto-base.git",
+        "tag": "v3.1.2.1",
+        "commit": "5df8d82a0595553415bbfae2930c6ecbeece5794"
+      }
+    }
+  }
+}

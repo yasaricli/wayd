@@ -1,0 +1,12 @@
+/*
+* @yasaricli 
+* Wayd Stylesheet
+*/
+body { background-color:#fff; padding:0px; margin:0px; }
+
+.clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
+.fl { float:left; }
+.fr { float:right; }
+.ma { margin:auto; }
+.fixed { position:fixed; }
+.hidden { display:none; }

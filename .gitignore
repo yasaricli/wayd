@@ -1,0 +1,6 @@
+# text editors
+*~
+*.swp
+
+# private file
+private/*

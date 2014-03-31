@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "Planet": {},
+    "iron-router": {},
+    "gravatar": {},
+    "googleAnalytics": {},
+    "imagemagick": {}
+  }
+}
