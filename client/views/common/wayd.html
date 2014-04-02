@@ -17,9 +17,17 @@
             <img src="/img/animate/wing.png" class="wing"/>  
             <img src="/img/animate/tail.png" class="tail"/>
         </div>
-        <div class="sub">
+        <form id="SubscribeForm" class="sub">
+            <h2>Get on the list</h2>
+            <p>We'll keep you updated as development progresses and send you an invite key when there's space.</p>
             <input type="text" name="email" placeholder="Email" id="id_email" />
+            {{# if err }} 
+                <div class="err pa">{{ err }}</div>
+            {{/if}}
             <a href="#" class="subscribe-post">Subscribe</a>
+        </form>
+        <div class="ok hidden">
+            Thanks, Wayd is opened you will be informed by email <span>{{ email }}</span>.
         </div>
     </div>
 </template>
