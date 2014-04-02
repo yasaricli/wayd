@@ -1,9 +1,6 @@
 (function() {
     Planet("index") ({
-        rendered: function() {
-            // bird show;
-            bird.hey('show');
-        },
+        rendered: index_rendered,
         helpers: {},
         events: {
         

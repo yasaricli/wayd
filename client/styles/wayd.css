@@ -21,3 +21,6 @@ body { background-color:#fff; padding:0px; margin:0px; }
 .anim-logo .head { right: 30px; top: 42px; }
 .anim-logo .wing { top: 20px; left: 15px; }
 .anim-logo .tail { top: 171px; left: -7px; }
+
+.sub { width: 290px; text-align:left; position: absolute; left: 0px; right: 0px; top: 50%; margin: auto; opacity: 0; }
+
