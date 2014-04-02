@@ -3,15 +3,21 @@
 </head>
 
 <template name="layout">
-    <div id="Surface">
+    <div id="Surface" class="clearfix">
         {{ > yield }}
     </div>
 </template>
 
 <!-- Index Page -->
 <template name="index">
-    index
+    <div class="anim-logo">
+        <img src="/img/animate/body.png" class="body"/>  
+        <img src="/img/animate/head.png" class="head"/>  
+        <img src="/img/animate/wing.png" class="wing"/>  
+        <img src="/img/animate/tail.png" class="tail"/>
+    </div>
 </template>
+
 <template name="notFound"></template>
 <template name="loading"></template>
 

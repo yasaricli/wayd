@@ -5,8 +5,19 @@
 body { background-color:#fff; padding:0px; margin:0px; }
 
 .clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
+.pa { position:absolute; }
 .fl { float:left; }
 .fr { float:right; }
 .ma { margin:auto; }
+.hidden { display:none; }
 .fixed { position:fixed; }
 .hidden { display:none; }
+.bgred { background:red; }
+
+/* Bird Animate styles */ 
+.anim-logo { position:absolute; width:300px; height:300px; margin:auto; left:0px; right:0px; top:50%; margin-top: -155px; }
+.anim-logo .body, .anim-logo .head, .anim-logo .wing, .anim-logo .tail { width:100px; position:absolute; opacity: 0 }
+.anim-logo .body { top:62px; margin:auto; right:0px; left:0px; opacity: 0.9 }
+.anim-logo .head { right: 30px; top: 42px; }
+.anim-logo .wing { top: 20px; left: 15px; }
+.anim-logo .tail { top: 171px; left: -7px; }
