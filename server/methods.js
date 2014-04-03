@@ -6,6 +6,8 @@ Meteor.methods({
         }
         // insert and send email
         Emails.insert({ created: new Date(), email: val });
-        sendEmailTemplate(val) ("subscribe", {});
+        sendEmailTemplate(val) ("subscribe", {
+            subject: 'thanks for subscription'
+        });
     }
 });

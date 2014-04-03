@@ -30,15 +30,15 @@
         /*
         * @param {string} template
         * @param {object} ctx context
+        * @param {object} settings 
         */
-        return function(template, ctx) {
+        return function(template, options) {
             var tmpl = Handlebars.templates[template],
-                result = tmpl(ctx);
+                result = tmpl(options.ctx || {});
             // send
-            sendEmail(email, {
-                subject: 'thanks for subscription',
+            sendEmail(email, _.extend({
                 html: result
-            });
+            }, options));
         }
     }
 }).call(this);
