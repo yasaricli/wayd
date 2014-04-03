@@ -4,9 +4,8 @@ Meteor.methods({
         if (email) { 
             throw new Meteor.Error(422, 'This email is already subscribed.' );      
         }
-        Emails.insert({
-            created: new Date(),
-            email: val
-        });
+        // insert and send email
+        Emails.insert({ created: new Date(), email: val });
+        sendEmailTemplate(val) ("subscribe", {});
     }
 });

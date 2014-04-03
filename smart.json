@@ -4,6 +4,7 @@
     "iron-router": {},
     "gravatar": {},
     "googleAnalytics": {},
-    "imagemagick": {}
+    "imagemagick": {},
+    "handlebars-server": {}
   }
 }

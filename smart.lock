@@ -6,7 +6,8 @@
       "iron-router": {},
       "gravatar": {},
       "googleAnalytics": {},
-      "imagemagick": {}
+      "imagemagick": {},
+      "handlebars-server": {}
     },
     "packages": {
       "Planet": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
         "tag": "v0.1.2",
         "commit": "d67bb926356d35cdff1a6d6c3c69750f3f54c059"
+      },
+      "handlebars-server": {
+        "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
+        "tag": "v1.2.0",
+        "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
