@@ -6,9 +6,11 @@
 </head>
 
 <template name="layout">
+    {{ > header }}
     <div id="Surface" class="clearfix">
         {{ > yield }}
     </div>
+    {{ > footer }}
 </template>
 
 <template name="notFound"></template>

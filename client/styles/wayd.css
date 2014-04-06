@@ -4,6 +4,10 @@
 */
 body { background-color:#fff; padding:0px; margin:0px; }
 
+
+h2, h1, h3 { padding:0px; margin:0px; } 
+ul, li { list-style:none; padding:0px; margin:0px; }
+
 .clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
 .pa { position:absolute; }
 .fl { float:left; }
@@ -13,3 +17,21 @@ body { background-color:#fff; padding:0px; margin:0px; }
 .fixed { position:fixed; }
 .hidden { display:none; }
 .bgred { background:red; }
+
+.container { width:980px; margin:auto; }
+
+
+#Surface { }
+#Header { position:relative; }
+
+#Footer { background-color:#dddddd; color:#555555; position:relative; }
+#Footer .fot { width:980px; margin:auto; padding-top:80px; padding-bottom:20px; }
+#Footer .why-wayd { background-color:#f5f5f5; padding:120px 160px 224px 160px; text-align:center; }
+#Footer .why-wayd h3 { color:#999999; font-size:30px; }
+#Footer .why-wayd h1 { font-size:60px; }
+#Footer .container { width:auto; }
+#Footer a { color:#555555; }
+#Footer a:hover { color:black; }
+.footer-menu { float:left; }
+.footer-menu li { float:left; margin-right:10px; font-size:14px; }
+.footer-copyright { float:right; font-size: 13px; }
