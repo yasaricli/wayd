@@ -1136,8 +1136,7 @@ pre {
   font-size: 1.4rem;
   text-align: center;
   margin: 15rem auto; }
-  .sub .subscribe-post, .sub .newer-posts {
-    position: absolute;
+  .subscribe-post, .sub .newer-posts {
     display: inline-block;
     vertical-align: middle;
     height: 4.2rem;
@@ -1147,12 +1146,10 @@ pre {
     -webkit-transition: .15s all;
     transition: .15s all;
     border: 2px solid #4a89dc; }
-    .sub .subscribe-post:hover, .sub .newer-posts:hover {
+    .subscribe-post:hover, .sub .newer-posts:hover {
       color: white;
       background: #4a89dc;
       border-color: #4a89dc; }
-  .sub .subscribe-post {
-    right: 0; }
   .sub .newer-posts {
     left: 0; }
 
@@ -1422,7 +1419,7 @@ a.btn {
   .sub {
     color: white;
     margin: 10rem auto; }
-    .sub .subscribe-post, .sub .newer-posts {
+    .subscribe-post, .sub .newer-posts {
       line-height: 3.9rem; }
 
   .search-title {
