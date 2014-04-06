@@ -7,11 +7,10 @@
     */
     root.sendEmails = function(emails, options) {
         _.forEach(emails, function(email) {
-            Email.send(_.extend({
-                from: 'team@wayd.in',
-                to: email
-            }, options));
-        });    
+            Tmlr.send("wayd") (_.extend({ to: email }, options), function() {
+                console.log("e-mail has been sent.");
+            });
+        });
     };
 
     /*
@@ -34,10 +33,10 @@
         */
         return function(template, options) {
             var tmpl = Handlebars.templates[template],
-                result = tmpl(options.ctx || {});
+                render = tmpl(options.ctx || {});
             // send
             sendEmail(email, _.extend({
-                html: result
+                html: render
             }, options));
         }
     }

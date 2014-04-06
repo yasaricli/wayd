@@ -5,6 +5,7 @@
     "gravatar": {},
     "googleAnalytics": {},
     "imagemagick": {},
-    "handlebars-server": {}
+    "handlebars-server": {},
+    "tmlr": {}
   }
 }

@@ -7,7 +7,8 @@
       "gravatar": {},
       "googleAnalytics": {},
       "imagemagick": {},
-      "handlebars-server": {}
+      "handlebars-server": {},
+      "tmlr": {}
     },
     "packages": {
       "Planet": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
         "tag": "v1.2.0",
         "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
+      },
+      "tmlr": {
+        "git": "https://github.com/waydin/tmlr.git",
+        "tag": "v0.0.1",
+        "commit": "94e5ccffe02ad01e628e12443d4d532a9bc478a2"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
