@@ -13,21 +13,3 @@ body { background-color:#fff; padding:0px; margin:0px; }
 .fixed { position:fixed; }
 .hidden { display:none; }
 .bgred { background:red; }
-
-
-
-/* Bird Animate styles */ 
-.anim-logo { position:absolute; width:300px; height:300px; margin:auto; left:0px; right:0px; top:50%; margin-top: -180px; }
-.anim-logo .body, .anim-logo .head, .anim-logo .wing, .anim-logo .tail { width:100px; position:absolute; opacity: 0 }
-.anim-logo .body { top:62px; margin:auto; right:0px; left:0px; opacity: 0.9 }
-.anim-logo .head { right: 30px; top: 42px; }
-.anim-logo .wing { top: 20px; left: 15px; }
-.anim-logo .tail { top: 171px; left: -7px; }
-
-.sub { width: 290px; text-align:left; position: absolute; left: 160px; right: 0px; top: 50%; margin: -155px auto; opacity: 0; }
-.sub p { line-height:22px; font-weight:normal; margin-top:0px; margin-bottom:15px; }
-.sub h2 { margin-bottom:5px; }
-.ok { margin-top:120px; text-align:center; }
-.ok span { color:#2d333b; }
-.invalid, .invalid:focus, .err { border-color: #da4453; }
-.err { color: #da4453; }
