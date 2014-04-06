@@ -17,8 +17,8 @@ ul, li { list-style:none; padding:0px; margin:0px; }
 .fixed { position:fixed; }
 .hidden { display:none; }
 .bgred { background:red; }
-#Surface { background-color:white; }
-.container { width:980px; margin:auto; }
+#Surface { background-color:white; min-height:200px; }
+.container { width:980px; margin:auto; position:relative; }
 
 #Header { background: url('/img/header.png') no-repeat center center;  -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-bottom: 80px;}
 #Header .landing-top { width:360px; height:180px; margin:auto; }
@@ -28,8 +28,8 @@ ul, li { list-style:none; padding:0px; margin:0px; }
 #Header .landing .features p { margin:0px; padding:0px; font-size:18px; line-height:25px; }
 #Header .landing .features a { font-size:12px; }
 #Header .landing .features a:hover { text-decoration:underline; }
-
 #Header .landing .auth { float:right; margin-top:20px; }
+#Header .polygon { position:absolute; bottom:-209px; height:209px; background:red; width:100%; background:url('img/polygon.png') no-repeat top center; }
 
 #Footer { background-color:#dddddd; color:#555555; position:relative; }
 #Footer .fot { width:980px; margin:auto; padding-top:80px; padding-bottom:20px; }
@@ -52,3 +52,14 @@ ul, li { list-style:none; padding:0px; margin:0px; }
 .formline .formline-opt { font-size:12px; color:#aaaaaa; position:absolute; right: 16px; bottom: 12px; }
 .formtext-bottom { font-size:16px; }
 
+/* Timeline */
+.timeline { position:relative; padding-top:85px; }
+.timeline .label { text-align:center; font-size:48px; color:#222222; width:300px; margin:auto; margin-bottom:30px; }
+.timeline .wayds { background-color:#f5fbfc; min-height:100px; margin:auto; margin-bottom:40px; padding:50px; }
+.timeline .wayds li { min-height:110px; background-color:white; margin-bottom:80px; }
+.timeline .wayds li.last { margin-bottom:0px; }
+.timeline .timeline-nav { }
+.timeline .timeline-nav li { float:left; background-color:#ebf7f8; text-align:center; margin-right:1px; }
+.timeline .timeline-nav li a { color:#222222; width:200px; line-height:60px; display:block; }
+.timeline .timeline-nav li a:hover { background:#f5fbfc; }
+.timeline .timeline-nav li.active { background-color:#f5fbfc; }
