@@ -1,0 +1,36 @@
+/*
+* @yasaricli, @erhanbasa
+* Wayd Responsive Stylesheet
+*/
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.container 	{width: 768px; overflow: hidden;}
+	#Header {background-position:  center -30px; padding-bottom: 30px;}
+	#Header .landing 		{padding: 0;}
+	#Footer .fot 		{width: 94%;}
+	.timeline .wayds li .wayd-description {width: 535px;}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.container 	{width: 480px; overflow: hidden;}
+	#Header {background: url('/img/header.png') no-repeat center -30px; padding-bottom: 0; margin-bottom: -32px;}
+	#Header .landing {margin-top: 30px;}
+	#Header .landing .features h1 {font-size: 30px; text-align: center; line-height: 35px;}
+	#Header .landing .features p {font-size: 14px; line-height: 20px; }
+	#Header .landing .features a 	{display: none;}
+	.timeline .wayds li .wayd-description 	{width: 100%; margin-left: 0; margin-top: 10px;}	
+	#Footer .why-wayd h1 {font-size: 40px; margin-top: 10px;}
+	#Footer .fot 		{width: 94%;}
+	.footer-menu  	{width: 100%; text-align: center;}
+	.footer-menu li 	{display: inline-block; float: none;}
+	.footer-copyright 	{width: 100%; text-align: center;}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.container 	{width: 320px; overflow: hidden;}
+	#Footer .why-wayd {padding: 180px 100px 180px 100px;}
+	#LoginForm 	{width: auto;}
+}
