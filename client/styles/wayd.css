@@ -2,8 +2,7 @@
 * @yasaricli 
 * Wayd Stylesheet
 */
-body { padding:0px; margin:0px; background:url('img/textlogo.png') no-repeat top center fixed; }
-
+body { padding:0px; margin:0px; background:url('img/textlogo.png') no-repeat top center fixed; font-family:'fontnormal'; }
 
 h2, h1, h3 { padding:0px; margin:0px; } 
 ul, li { list-style:none; padding:0px; margin:0px; }
