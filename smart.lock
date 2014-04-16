@@ -8,7 +8,8 @@
       "googleAnalytics": {},
       "imagemagick": {},
       "handlebars-server": {},
-      "tmlr": {}
+      "tmlr": {},
+      "Fixtures": {}
     },
     "packages": {
       "Planet": {
@@ -18,8 +19,8 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.7.0",
-        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
       },
       "gravatar": {
         "git": "https://github.com/tmeasday/meteor-gravatar.git",
@@ -46,10 +47,15 @@
         "tag": "v0.0.1",
         "commit": "94e5ccffe02ad01e628e12443d4d532a9bc478a2"
       },
+      "Fixtures": {
+        "git": "https://github.com/waydin/fixtures.git",
+        "tag": "v0.0.3",
+        "commit": "a5b281f88614376f26aa07e6a73db5c95cc3c34d"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.2",
-        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
       },
       "crypto-md5": {
         "git": "https://github.com/oortcloud/meteor-crypto-md5.git",
