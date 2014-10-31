@@ -1,4 +1,0 @@
-wayd
-====
-
-social sharing.
