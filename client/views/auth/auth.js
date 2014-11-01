@@ -10,7 +10,7 @@ var Auth = {
         if (err) Session.set("autherror", err);
     },
     errCall: function(err) {
-        if (err) this.error(err.reason);
+        if (err) Auth.error(err.reason);
     },
     check: function(field) {
         var $this = $(field);
@@ -39,6 +39,10 @@ Template.login.events({
             Meteor.loginWithPassword(email, password, Auth.errCall);
         }
         event.preventDefault();
+    },
+    "focus input": function() {
+        var height = $("body").height();
+        $("html, body").animate({ scrollTop: height });
     },
     "click .signup": function() {
         event.preventDefault();
