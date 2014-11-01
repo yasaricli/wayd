@@ -1,23 +1,37 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault("counter", 0);
+Wayd = {
+    Router: function() {
+            
+        // onBeforeAction
+        Router.onBeforeAction(function () {
+            if (!Meteor.userId()) {
+                // if the user is not logged in, render the Login template
+                this.render('auth');
+            } else { 
+                /*
+                * otherwise don't hold up the rest of hooks or our route/action function
+                * from running 
+                */
+                this.next(); 
+            }
+        });
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get("counter");
+        // Router configures
+        Router.configure({ layoutTemplate: 'layout' });
+
+        // routers
+        Router.route('/', function () {
+            this.render('home');
+        });
+    },
+    Helpers: {
+        session: function(key) {
+            return Session.get(key);         
+        }
     }
-  });
+};
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
-    }
-  });
-}
+// Router
+Wayd.Router();
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
+// Context Helpers
+_.each(Wayd.Helpers, function(fn, name) { Template.registerHelper(name, fn); });

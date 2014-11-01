@@ -1,0 +1,44 @@
+<template name="auth">
+    {{ > template }}
+</template>
+
+<template name="login">
+    <form id="LoginForm">
+        <img src="/logo.png" class="logo"/>
+        <div class="formline error"> {{ session "autherror" }}</div>
+        <div class="formline">
+            <input type="text" name="email" id="email" placeholder="Email">
+       </div>
+        <div class="formline">
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="formline">
+            <input type="submit" class="button" value="LOGIN">
+        </div>
+        <div class="formline text">
+            Don't have an account? <a href="#" class="signup">Sign Up</a>
+        </div>
+    </form>
+</template>
+
+<template name="register">
+    <form id="RegisterForm">
+        <img src="/logo.png" class="logo"/>
+        <div class="formline error"> {{ session "autherror" }}</div>
+        <div class="formline">
+            <input type="text" name="email" id="email" placeholder="Email">
+       </div>
+        <div class="formline">
+            <input type="text" name="username" id="username" placeholder="Username">
+       </div>
+        <div class="formline">
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="formline">
+            <input type="submit" class="button" value="SIGN UP">
+        </div>
+        <div class="formline text">
+            Already have an account? <a href="#" class="signin">Sign In</a>
+        </div>
+    </form>
+</template>

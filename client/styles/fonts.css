@@ -1,0 +1,8 @@
+/*
+*
+* Fonts media 
+*/
+
+@font-face {font-family: 'fontnormal';src: url('/fonts/fontnormal.eot');src:url('/fonts/fontnormal.svg#proxima_nova_rgregular') format('svg'), url('/fonts/fontnormal.eot?#iefix') format('embedded-opentype'),url('/fonts/fontnormal.woff') format('woff'),url('/fonts/fontnormal.ttf') format('truetype');font-weight: normal;font-style: normal; }
+
+.fontnormal { font-family:'fontnormal'; }
