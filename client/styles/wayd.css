@@ -1,10 +1,12 @@
-/*
-* @yasaricli 
-* Wayd Stylesheet
-*/
-body { background-color:#fff; padding:0px; margin:0px; }
+body { padding:0px; margin:0px; font-family:'fontnormal'; color:#565656; }
 
-.clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
+/* basic tags */
+h2, h1, h3 { padding:0px; margin:0px; } 
+ul, li { list-style:none; padding:0px; margin:0px; }
+
+a { border-bottom: solid 1px black; text-decoration: none; color: inherit; }
+
+/* basig classes */
 .pa { position:absolute; }
 .fl { float:left; }
 .fr { float:right; }
@@ -12,22 +14,17 @@ body { background-color:#fff; padding:0px; margin:0px; }
 .hidden { display:none; }
 .fixed { position:fixed; }
 .hidden { display:none; }
-.bgred { background:red; }
+.clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
 
+img.logo { outline: 0; max-width: 200px; height: auto; }
+#LoginForm, #RegisterForm { width:240px; margin:auto; }
+#LoginForm .logo, #RegisterForm .logo { margin-left:22px; }
+#LoginForm .formline input, #RegisterForm .formline input { text-align:center; }
 
-
-/* Bird Animate styles */ 
-.anim-logo { position:absolute; width:300px; height:300px; margin:auto; left:0px; right:0px; top:50%; margin-top: -180px; }
-.anim-logo .body, .anim-logo .head, .anim-logo .wing, .anim-logo .tail { width:100px; position:absolute; opacity: 0 }
-.anim-logo .body { top:62px; margin:auto; right:0px; left:0px; opacity: 0.9 }
-.anim-logo .head { right: 30px; top: 42px; }
-.anim-logo .wing { top: 20px; left: 15px; }
-.anim-logo .tail { top: 171px; left: -7px; }
-
-.sub { width: 290px; text-align:left; position: absolute; left: 160px; right: 0px; top: 50%; margin: -155px auto; opacity: 0; }
-.sub p { line-height:22px; font-weight:normal; margin-top:0px; margin-bottom:15px; }
-.sub h2 { margin-bottom:5px; }
-.ok { margin-top:120px; text-align:center; }
-.ok span { color:#2d333b; }
-.invalid, .invalid:focus, .err { border-color: #da4453; }
-.err { color: #da4453; }
+.formline { padding-bottom:5px; }
+.formline input { width:200px; background-color:#f5f5f5; border:2px solid white; padding:20px; outline:none; font-size:16px; }
+.formline input.error { border:2px solid rgb(200, 57, 57); }
+.formline .button { background: #215f8b; margin-right: 0; color: white; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 400; font-size: 14px; width: 240px; display:block; height: 53px; padding: 0 15px; }
+.formline.text { padding-top: 10px; text-align: center; }
+.formline.text a { font-weight:bold; }
+.formline.error { text-align:center; color:rgb(200, 57, 57); }

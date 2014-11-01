@@ -1,4 +1,4 @@
 wayd
 ====
 
-social sharing.
+Social sharing.
