@@ -2,7 +2,19 @@
   <title>wayd</title>
 </head>
 
-<template name="layout">
+<template name="WaydLayout">
+    <div id="Surface">
+        <div id="Header">
+            <a href="/wayds" class="textlogo fontgreat">wayds</a>
+        </div>
+        <div id="Content">
+            {{ > yield }}
+        </div>
+        <div id="Footer"></div>
+    </div>
+</template>
+
+<template name="AuthLayout">
     <div id="Surface">
         {{ > yield }}
     </div>

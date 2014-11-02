@@ -1,0 +1,44 @@
+<template name="wayds">
+    <ul id="Wayds">
+        {{# each currentUser.wayds }}
+            <li class="wayd clearfix">
+                <div class="wayd-content clearfix">
+                    <div class="avatar">
+                        <img src="http://yasaricli.com/images/avatar.jpg">
+                    </div>
+                    <div class="user-info">
+                        <span class="fullname fontsans">{{ user.profile.firstname }} {{ user.profile.lastname }}</span>
+                        <span class="username"><span>@</span>{{ user.username }}</span>
+                    </div>
+                    <div class="timestamp">{{ moment date=createdAt format='relative' }}</div>
+                    <div class="text">{{ text }}</div>
+                </div>
+            </li>
+        {{ else }}
+            <li class="notfound">
+                Could not find anything...
+            </li>
+        {{/each}}
+    </ul>
+    {{ > pagelet }}
+</template>
+
+<template name="pagelet">
+    {{# if session "pageletClick" }}<a class="pageletClick fontpasifico" href="#pagelet">+</a>{{/ if }}
+    {{# if session "pagelet" }}
+        <div class="lightbox"></div>
+        <div id="pagelet">
+            <div class="pagelet-header">
+                new wayd
+                <div class="share fontsans">SHARE</div>
+            </div>
+            <div class="pagelet-content">
+                <textarea id="title" placeholder="what are you doing ?"></textarea>
+            </div>
+            <ul class="pagelet-shortcuts">
+                <li class="shortcut photo"></li>
+                <li class="shortcut location"></li>
+            </ul>
+        </div>
+    {{/ if }}
+</template>

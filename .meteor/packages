@@ -10,4 +10,8 @@ iron:router
 dburles:collection-helpers
 accounts-ui
 accounts-password
+cfs:standard-packages
+cfs:filesystem
+gabrielengel:konecty-magnific-popup
+mrt:moment
 

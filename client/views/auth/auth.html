@@ -2,6 +2,17 @@
     {{ > template }}
 </template>
 
+<template name="profile">
+    <div id="Profile">
+        <div class="avatar">
+            <img src="http://yasaricli.com/images/avatar.jpg">
+        </div>
+        <div class="profile-detail">{{ currentUser.profile.firstname }} {{ currentUser.profile.lastname }}</div>
+        <div class="profile-detail fontpasifico">{{ currentUser.username }}</div>
+        <div class="profileEdit fontsans">update profile</div>
+    </div>
+</template>
+
 <template name="login">
     <form id="LoginForm">
         <img src="/logo.png" class="logo"/>

@@ -16,6 +16,35 @@ a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit
 .hidden { display:none; }
 .clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
 
+#Surface { }
+#Content { position:absolute; top:66px; width:100%; }
+#Header { line-height:60px; background-color:#4ea1e0; text-align:center;  width:100%; position:fixed; z-index:1; }
+#Footer { }
+
+#Profile { text-align:center; padding:25px; } 
+#Profile .avatar { }
+#Profile .avatar img { width:125px; border-radius:100px; }
+
+.mfp-content #pagelet { display:block!important; }
+
+.profile-detail { font-size:30px; }
+.textlogo { color:#fff; font-weight:bold; font-size:45px; -webkit-font-smoothing: subpixel-antialiased; text-decoration:none; border:0px; }
+
+.notfound { text-align:center; color:#999; padding:10px; }
+.fullname { font-weight:bold; }
+.username, .timestamp { color: #999; }
+
+.timestamp { margin-top: -13px; font-size: 13px; }
+#Wayds { }
+#Wayds .wayd { padding:10px; border-bottom: 1px solid rgba(204, 204, 204, 0.42); }
+#Wayds .wayd-content { }
+#Wayds .wayd-content .avatar { width:50px; height:50px; float:left; margin-right:10px; }
+#Wayds .wayd-content img { width:100%; }
+#Wayds .wayd-content .user-info { }
+#Wayds .wayd-content .timestamp { float:right; }
+#Wayds .wayd-content .text { margin-left:60px; font-size: 13px; margin-top: 5px; }
+
+
 img.logo { outline: 0; max-width: 200px; height: auto; }
 #LoginForm, #RegisterForm { width:240px; margin:auto; }
 #LoginForm .logo, #RegisterForm .logo { margin-left:22px; }
@@ -28,3 +57,21 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 .formline.text { padding-top: 10px; text-align: center; }
 .formline.text a { font-weight:bold; }
 .formline.error { text-align:center; color:rgb(200, 57, 57); }
+
+.mfp-bg { background:rgba(11, 11, 11, 0.66); }
+
+.pageletClick { width:50px; height:50px; background-color:#0060c0; position:fixed; text-align: center; color: white; font-size: 66px; line-height: 31px; bottom:20px; right:20px; cursor:pointer; border-bottom:0px; }
+.lightbox { top: 0; left: 0; width: 100%; height: 100%; z-index: 1042; overflow: hidden; position: fixed; background: rgba(11, 11, 11, 0.74);  }
+.pagelet-header { background-color: #4ea1e0; /* height: 120px; */ color: white; padding: 13px; position:relative; }
+.pagelet-content { background-color:white; padding:10px; }
+.pagelet-shortcuts { background-color:#f6f5f5; height:40px; border-top:1px solid #e0e0e0; }
+#title { width: 100%; resize: none; border: 0px; outline: none; font-size: 15px; min-height:80px; }
+.share { position: absolute; right: 0px; line-height: 44px; top: 0px; background: #0060c0; padding: 0 20px 0 20px; font-weight: bold; }
+#pagelet { width:90%; position:absolute; z-index:9999; top:0px; margin: auto; left: 0px; right: 0px; }
+
+.shortcut { background-image: url('/pagelet.png'); background-repeat: no-repeat; background-size: auto; width:40px; height:40px; float:left; cursor:pointer; }
+.shortcut.photo { background-position: 0 0px; }
+.shortcut.photo:hover { background-position: 0 -40px; }
+.shortcut.location { background-position: 0 -240px; }
+.shortcut.location:hover { background-position: 0 -280px; }
+.profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 30px auto; font-size: 20px; cursor: pointer; font-weight:bold; }
