@@ -4,7 +4,7 @@
             <li class="wayd clearfix">
                 <div class="wayd-content clearfix">
                     <div class="avatar">
-                        <img src="http://yasaricli.com/images/avatar.jpg">
+                        <img src="{{ currentUser.avatar.url store='thumbs'}}">
                     </div>
                     <div class="user-info">
                         <span class="fullname fontsans">{{ user.profile.firstname }} {{ user.profile.lastname }}</span>

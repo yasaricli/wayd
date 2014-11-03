@@ -4,6 +4,8 @@ body { padding:0px; margin:0px; font-family:'fontnormal'; color:#565656; }
 h2, h1, h3 { padding:0px; margin:0px; } 
 ul, li { list-style:none; padding:0px; margin:0px; }
 
+input, button { outline:none; }
+
 a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit; cursor:pointer; }
 
 /* basig classes */

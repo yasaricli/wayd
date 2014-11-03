@@ -76,6 +76,24 @@ Template.settings.events({
         Meteor.call('updateSessionUser', {
             'profile.firstname': t.find('#firstname').value,
             'profile.lastname': t.find('#lastname').value
+        }, function() {
+            Router.go("/");
         });
+    }
+});
+
+Template.avatarUpdate.events({
+    'click .avatarImg': function(e, t) {
+        var file = t.find("#AvatarFile");
+        file.click();
+    },
+    'change #AvatarFile': function(e, t) {
+        var image = new FS.File(event.target.files[0]);
+        if (image.data) {
+            image.userId = Meteor.userId();
+            Avatars.insert(image, function(err) {
+                if (err) console.log("hata");
+            });
+        }
     }
 });

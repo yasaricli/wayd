@@ -13,3 +13,5 @@ accounts-password
 cfs:standard-packages
 cfs:filesystem
 mrt:moment
+cfs:graphicsmagick
+

@@ -18,6 +18,7 @@ cfs:collection@0.0.0
 cfs:data-man@0.0.0
 cfs:file@0.0.0
 cfs:filesystem@0.0.0
+cfs:graphicsmagick@0.0.1
 cfs:http-methods@0.0.24
 cfs:http-publish@0.0.0
 cfs:power-queue@0.0.1
