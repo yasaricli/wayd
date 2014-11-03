@@ -69,3 +69,13 @@ Template.register.events({
         Session.set("authform", "login");
     }
 });
+
+Template.settings.events({
+    'submit #SettingsForm': function(e, t) {
+        e.preventDefault(); 
+        Meteor.call('updateSessionUser', {
+            'profile.firstname': t.find('#firstname').value,
+            'profile.lastname': t.find('#lastname').value
+        });
+    }
+});

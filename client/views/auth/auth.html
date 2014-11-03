@@ -9,7 +9,27 @@
         </div>
         <div class="profile-detail">{{ currentUser.profile.firstname }} {{ currentUser.profile.lastname }}</div>
         <div class="profile-detail fontpasifico">{{ currentUser.username }}</div>
-        <div class="profileEdit fontsans">update profile</div>
+        <a href="{{ pathFor route='settings' }}" class="profileEdit fontsans show">settings</a>
+    </div>
+</template>
+
+<template name="settings">
+    <div id="Profile">
+        <div class="avatar">
+            <img src="http://yasaricli.com/images/avatar.jpg">
+        </div>
+        <form id="SettingsForm" class="profile-detail">
+            <div class="formline">
+                <input type="text" id="username" value="{{ currentUser.username }}" disabled>
+            </div>
+            <div class="formline">
+                <input type="text" id="firstname" placeholder="firstname" value="{{ currentUser.profile.firstname }}">
+            </div>
+            <div class="formline">
+                <input type="text" id="lastname" placeholder="lastname" value="{{ currentUser.profile.lastname }}">
+            </div>
+            <button class="profileEdit fontsans">save</button>
+        </form>
     </div>
 </template>
 

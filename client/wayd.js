@@ -20,13 +20,9 @@ Wayd = {
         // Router configures
         Router.configure({ });
 
-        Router.route('/', function() {
-            this.render('home');
-        });
-
-        Router.route('/wayds', function() {
-            this.render('wayds');
-        });
+        Router.route('/', function() { this.render('home'); });
+        Router.route('/wayds', function() { this.render('wayds'); });
+        Router.route('/settings', function() { this.render('settings'); });
     },
     Helpers: {
         session: function(key) {

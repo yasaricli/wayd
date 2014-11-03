@@ -12,8 +12,8 @@ a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit
 .fr { float:right; }
 .ma { margin:auto; }
 .hidden { display:none; }
+.show { display:block; }
 .fixed { position:fixed; }
-.hidden { display:none; }
 .clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
 
 #Surface { }
@@ -74,4 +74,5 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 .shortcut.photo:hover { background-position: 0 -40px; }
 .shortcut.location { background-position: 0 -240px; }
 .shortcut.location:hover { background-position: 0 -280px; }
-.profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 30px auto; font-size: 20px; cursor: pointer; font-weight:bold; }
+.profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 30px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; }
+#SettingsForm input { width:50%; }
