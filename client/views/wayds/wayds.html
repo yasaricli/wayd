@@ -1,10 +1,10 @@
 <template name="wayds">
     <ul id="Wayds">
-        {{# each currentUser.wayds }}
+        {{# each wayds }}
             <li class="wayd clearfix">
                 <div class="wayd-content clearfix">
                     <div class="avatar">
-                        <img src="{{ currentUser.avatar.url store='thumbs'}}">
+                        <img src="{{ avatar user._id }}">
                     </div>
                     <div class="user-info">
                         <span class="fullname fontsans">{{ user.profile.firstname }} {{ user.profile.lastname }}</span>

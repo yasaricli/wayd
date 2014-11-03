@@ -36,5 +36,10 @@ Template.pagelet.events({
     }
 });
 
-Template.wayds.helpers({});
+Template.wayds.helpers({
+    wayds: function() {
+        return Wayds.find({}, { sort: { createdAt: -1 }});
+    }
+});
+
 Template.pagelet.helpers({});

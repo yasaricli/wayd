@@ -16,19 +16,7 @@ Avatars = new FS.Collection("avatars", {
     }
 });
 
-Users.helpers({
-    wayds: function() {
-        return Wayds.find({ userId: this._id }, { sort: { createdAt: -1 }});
-    },
-    avatar: function() {
-        var avatar = Avatars.findOne({ userId: this._id }, { sort: { uploadedAt: -1 }});
-        return avatar ? avatar : {
-            url: function() {
-                return '/defaults/default-avatar.png';
-            }
-        }
-    }
-});
+Users.helpers({});
 
 Meteor.methods({
     updateSessionUser: function(obj) {

@@ -73,6 +73,6 @@
 <template name="avatarUpdate">
     <div class="avatar">
         <input type="file" id="AvatarFile" class="hidden">
-        <img src="{{ currentUser.avatar.url store='thumbs'}}" class="avatarImg">
+        <img src="{{ avatar currentUser._id }}" class="avatarImg">
     </div>
 </template>
