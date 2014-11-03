@@ -5,7 +5,7 @@ h2, h1, h3 { padding:0px; margin:0px; }
 ul, li { list-style:none; padding:0px; margin:0px; }
 
 input, button { outline:none; }
-
+input[disabled] { color:#B3B1B1!important; }
 a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit; cursor:pointer; }
 
 /* basig classes */
@@ -53,7 +53,7 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 #LoginForm .formline input, #RegisterForm .formline input { text-align:center; }
 
 .formline { padding-bottom:5px; }
-.formline input { width:200px; background-color:#f5f5f5; border:2px solid white; padding:20px; outline:none; font-size:16px; }
+.formline input, .formline textarea { width:200px; background-color:#f5f5f5; border:2px solid white; padding:20px; outline:none; font-size:16px; resize:none; }
 .formline input.error { border:2px solid rgb(200, 57, 57); }
 .formline .button { background: #215f8b; margin-right: 0; color: white; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 400; font-size: 14px; width: 240px; display:block; height: 53px; padding: 0 15px; }
 .formline.text { padding-top: 10px; text-align: center; }
@@ -71,10 +71,13 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 .share { position: absolute; right: 0px; line-height: 44px; top: 0px; background: #0060c0; padding: 0 20px 0 20px; font-weight: bold; }
 #pagelet { width:90%; position:absolute; z-index:9999; top:0px; margin: auto; left: 0px; right: 0px; }
 
+.bio { font-size:13px; margin-top:10px; }
 .shortcut { background-image: url('/pagelet.png'); background-repeat: no-repeat; background-size: auto; width:40px; height:40px; float:left; cursor:pointer; }
 .shortcut.photo { background-position: 0 0px; }
 .shortcut.photo:hover { background-position: 0 -40px; }
 .shortcut.location { background-position: 0 -240px; }
 .shortcut.location:hover { background-position: 0 -280px; }
-.profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 30px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; }
-#SettingsForm input { width:50%; }
+.profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 10px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; }
+#SettingsForm input, #SettingsForm textarea { width:50%; color:#666; }
+#SettingsForm textarea { width:50%; min-height:75px; }
+.avatarImg { cursor:pointer; }

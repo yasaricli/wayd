@@ -75,7 +75,8 @@ Template.settings.events({
         e.preventDefault(); 
         Meteor.call('updateSessionUser', {
             'profile.firstname': t.find('#firstname').value,
-            'profile.lastname': t.find('#lastname').value
+            'profile.lastname': t.find('#lastname').value,
+            'profile.bio': t.find('#bio').value
         }, function() {
             Router.go("/");
         });
