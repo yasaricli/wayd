@@ -1,18 +1,29 @@
 Users = Meteor.users;
 
+ImageStore = new FS.Store.GridFS("images", {
+    mongoUrl: 'mongodb://selamlar:selamlar@proximus.modulusmongo.net:27017/dUr8azuq',
+    maxTries: 1,
+    chunkSize: 1024*1024
+});
+
 Avatars = new FS.Collection("avatars", {
-    stores: [ 
-        new FS.Store.FileSystem("avatars", { path: "~/uploads" }),
-        new FS.Store.FileSystem("thumbs", {
-            transformWrite: function(fileObj, readStream, writeStream) {
-                gm(readStream).resize(125).stream().pipe(writeStream);                
-            }
-        })
-    ],
+    stores: [ImageStore],
     filter: {
         allow: {
             contentTypes: ['image/*']       
         }
+    }
+});
+
+Avatars.allow({
+    insert: function (userId, doc) {
+        if (userId == doc.userId) return true;
+    },
+    update: function(userId, doc) {
+        if (userId == doc.userId) return true;
+    },
+    download: function(userId, doc) {
+        return true;
     }
 });
 

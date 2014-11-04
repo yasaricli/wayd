@@ -13,3 +13,5 @@ cfs:filesystem
 mrt:moment
 cfs:graphicsmagick
 reywood:publish-composite
+cfs:gridfs
+
