@@ -8,25 +8,23 @@ ImageStore = new FS.Store.GridFS("avatars", {
 Avatars = new FS.Collection("avatars", {
     stores: [ImageStore],
     filter: {
-        allow: {
-            contentTypes: ['image/*'],
-            extensions: ['png', 'jpeg']       
-        }
+        maxSize: 5242880, // 5mb
+        allow: { contentTypes: ['image/*'], extension: ['jpg', 'png'] }
     }
 });
 
 Avatars.allow({
     insert: function (userId, doc) {
-        return doc.userId === useId;
+        return doc.userId === userId;
     },
     update: function(userId, doc) {
-        return doc.userId === useId;
+        return doc.userId === userId;
     },
     remove: function(userId, doc) {
-        return doc.userId === useId;
+        return doc.userId === userId;
     },
     download: function(userId, doc) {
-        return doc.userId === useId;
+        return doc.userId === userId;
     }
 });
 
