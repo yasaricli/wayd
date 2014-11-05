@@ -1,39 +1,19 @@
-Users = Meteor.users;
+var Stores = {};
 
-ImageStore = new FS.Store.GridFS("avatars", {
+// set stores
+Stores.Avatars = new FS.Store.GridFS("avatars", {
     mongoUrl: 'mongodb://selamlar:selamlar@proximus.modulusmongo.net:27017/dUr8azuq',
     maxTries: 1
 });
 
-Avatars = new FS.Collection("avatars", {
-    stores: [ImageStore],
-    filter: {
-        maxSize: 5242880, // 5mb
-        allow: { contentTypes: ['image/*'], extension: ['jpg', 'png'] }
-    },
-    onInvalid: function(message) {
-        console.log(message);
-    }
-});
+// Collections 
+Users = Meteor.users;
+Avatars = new FS.Collection("avatars", { stores: [Stores.Avatars] });
 
-Avatars.allow({
-    insert: function (userId, doc) {
-        console.log(userId, doc);
-        return doc.userId === userId;
-    },
-    update: function(userId, doc) {
-        return doc.userId === userId;
-    },
-    remove: function(userId, doc) {
-        return doc.userId === userId;
-    },
-    download: function(userId, doc) {
-        return doc.userId === userId;
-    }
-});
-
+// users helpers property
 Users.helpers({});
 
+// methods
 Meteor.methods({
     updateSessionUser: function(obj) {
         Users.update({

@@ -63,11 +63,22 @@ var Wayd = {
             var avatar = Avatars.findOne({ userId: userId }, { sort: { uploadedAt: -1 }});
             return avatar ? avatar.url() : '/defaults/default-avatar.png';    
         }
+    },
+    collectionFS: function() {
+        FS.debug = true; // enable CFS debug logging
+        
+        // default GET request headers
+        FS.HTTP.setHeadersForGet([
+            ['Cache-Control', 'public, max-age=31536000']
+        ]);  
     }
 };
 
 // Router
 Wayd.Router();
+
+// CollectionFs
+Wayd.collectionFS();
 
 // Context Helpers
 _.each(Wayd.Helpers, function(fn, name) { Template.registerHelper(name, fn); });
