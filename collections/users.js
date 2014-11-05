@@ -10,11 +10,15 @@ Avatars = new FS.Collection("avatars", {
     filter: {
         maxSize: 5242880, // 5mb
         allow: { contentTypes: ['image/*'], extension: ['jpg', 'png'] }
+    },
+    onInvalid: function(message) {
+        console.log(message);
     }
 });
 
 Avatars.allow({
     insert: function (userId, doc) {
+        console.log(userId, doc);
         return doc.userId === userId;
     },
     update: function(userId, doc) {

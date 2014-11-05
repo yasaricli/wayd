@@ -92,9 +92,7 @@ Template.avatarUpdate.events({
         var image = new FS.File(event.target.files[0]);
         if (image.data) {
             image.userId = Meteor.userId();
-            Avatars.insert(image, function(err) {
-                if (err) console.log(err);
-            });
+            Avatars.insert(image);
         }
     }
 });
