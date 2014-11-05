@@ -93,7 +93,7 @@ Template.avatarUpdate.events({
         if (image.data) {
             image.userId = Meteor.userId();
             Avatars.insert(image, function(err) {
-                if (err) console.log("hata");
+                if (err) console.log(err);
             });
         }
     }
