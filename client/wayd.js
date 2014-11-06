@@ -1,52 +1,47 @@
-var Wayd = {
-    Router: function() {
-        var preloadSubscriptions = ['session'];
-        // Router configures
-        Router.configure({ 
-            loadingTemplate: 'loading',
-            waitOn: function () {
-                return _.map(preloadSubscriptions, function(sub) {
-                    Meteor.subscribe(sub);
-                });
+Initialize(function() {
+    var _this = this,
+        preloadSubscriptions = ['session'];
+
+    /*
+    * enable CFS debug logging 
+    * default GET request headers 
+    */
+    FS.debug = true;
+    FS.HTTP.setHeadersForGet([
+        ['Cache-Control', 'public, max-age=31536000']
+    ]);  
+
+    // onBeforeAction
+    Router.onBeforeAction(function() {
+        if (!Meteor.userId()) {
+            // if the user is not logged in, render the Login template
+            this.layout('AuthLayout');
+            this.render('auth');
+        } else { 
+            /*
+            * otherwise don't hold up the rest of hooks or our route/action function
+            * from running 
+            */
+            this.layout('WaydLayout');
+            this.next(); 
+        }
+    });
+
+    // this place your route declarations in a Router.map block
+    Router.map(function() {
+        this.route('home', { path: '/' });
+        this.route('settings', { path: 'settings' }) ;
+
+        // subscribe views
+        this.route('wayds', { 
+            path: 'wayds' ,
+            waitOn: function() {
+                return Meteor.subscribe('wayds');
             }
         });
+    });
 
-        // onBeforeAction
-        Router.onBeforeAction(function() {
-            if (!Meteor.userId()) {
-                // if the user is not logged in, render the Login template
-                this.layout('AuthLayout');
-                this.render('auth');
-            } else { 
-                /*
-                * otherwise don't hold up the rest of hooks or our route/action function
-                * from running 
-                */
-                this.layout('WaydLayout');
-                this.next(); 
-            }
-        });
-
-        Router.map(function() {
-            this.route('home', { path: '/' });
-
-            // wayds page
-            this.route('wayds', { 
-                path: 'wayds' ,
-                waitOn: function() {
-                    return Meteor.subscribe('wayds');
-                }
-            });
-
-            // settings page
-            this.route('settings', { path: 'settings' }) ;
-        });
-    },
-    Helpers: {
-        // if console {{ console args or a=a }}
-        console: function() {
-            console.log(arguments);         
-        },
+    _this.Helpers({
         session: function(key) {
             return Session.get(key);
         },
@@ -63,22 +58,5 @@ var Wayd = {
             var avatar = Avatars.findOne({ userId: userId }, { sort: { uploadedAt: -1 }});
             return avatar ? avatar.url() : '/defaults/default-avatar.png';    
         }
-    },
-    collectionFS: function() {
-        FS.debug = true; // enable CFS debug logging
-        
-        // default GET request headers
-        FS.HTTP.setHeadersForGet([
-            ['Cache-Control', 'public, max-age=31536000']
-        ]);  
-    }
-};
-
-// Router
-Wayd.Router();
-
-// CollectionFs
-Wayd.collectionFS();
-
-// Context Helpers
-_.each(Wayd.Helpers, function(fn, name) { Template.registerHelper(name, fn); });
+    });
+});
