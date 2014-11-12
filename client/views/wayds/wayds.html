@@ -35,13 +35,13 @@
             </li>
         {{/each}}
     </ul>
+
     {{ > pagelet }}
 </template>
 
 <template name="pagelet">
     {{# if session "pageletClick" }}<a class="pageletClick fontpasifico" href="#pagelet">+</a>{{/ if }}
     {{# if session "pagelet" }}
-        <div class="lightbox"></div>
         <div id="pagelet">
             <div class="pagelet-header">
                 new wayd <div class="share fontsans">SHARE</div>

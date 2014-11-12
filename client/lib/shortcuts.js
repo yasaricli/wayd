@@ -28,6 +28,40 @@
                 }, fn);
             };
 
+            _this.lightbox = {
+                show: function(call) {
+                    Session.set('lightbox', true);
+                    call && call();
+                },
+                hide: function(call) {
+                    Session.set('lightbox', false);
+                    Session.set('pagelet', false);
+                    Session.set('pageletClick', true);
+                    call && call();
+                }
+            };
+
+            Template.lightbox.events({
+                'click .lightbox': function() {
+                    _this.lightbox.hide();
+                }
+            });
+
+            Template.HamburgerMenu.events({
+                'click .logout': function() {
+                    Meteor.logout();
+                }
+            });
+
+            Template.header.events({
+                'click #MenuIcon': function(e, t) {
+                    var menu = $("#HamburgerMenu"),
+                        surface = $('#Surface');
+                    menu.animate({ left: '0px' }, 'fast');
+                    surface.animate({ left: '200px'}, 'fast');
+                }
+            });
+
             _this.Helpers = function(obj) {
                 _.each(obj, function(fn, name) { Template.registerHelper(name, fn); });
             };

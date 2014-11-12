@@ -18,7 +18,7 @@ a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit
 .fixed { position:fixed; }
 .clearfix:after { content:"."; visibility:hidden; display:block; height:0; clear:both; font-size:0; }
 
-#Surface { }
+#Surface { position:relative; }
 #Content { position:absolute; top:66px; width:100%; }
 #Header { line-height:60px; background-color:#4ea1e0; text-align:center;  width:100%; position:fixed; z-index:1; }
 #Footer { }
@@ -47,6 +47,7 @@ a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit
 #Wayds .wayd-content .text { margin-left:60px; font-size: 13px; margin-top: 5px; }
 #Wayds .waydImages { margin-left:60px; margin-top:15px; }
 #Wayds .waydImages li { float:left; margin-right:5px; }
+#Wayds .waydImages li img { border-radius:4px; }
 
 
 img.logo { outline: 0; max-width: 200px; height: auto; }
@@ -81,6 +82,7 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 .shortcut.location { background-position: 0 -240px; }
 .shortcut.location:hover { background-position: 0 -280px; }
 .profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 10px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; }
+.logout { background: #B61E4C; color: white; padding: 10px; width: 50%; margin: 10px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; margin-top:10px; display:block; }
 #SettingsForm input, #SettingsForm textarea { width:50%; color:#666; }
 #SettingsForm textarea { width:50%; min-height:75px; }
 .avatarImg { cursor:pointer; }
@@ -88,3 +90,8 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 .reactImages { padding: 10px; background: white; }
 .reactImages li { float:left; margin-right:5px; }
 .reactImages li img { width: 100px; border-radius: 3px; }
+#HamburgerMenu { width: 200px; background: #373e4d; position: fixed; z-index: 9999; height: 100%; left:-200px; }
+#HamburgerMenu li { color:white; padding:15px; text-align:center; }
+#HamburgerMenu li .avatar { margin-bottom:10px; }
+#HamburgerMenu li span { font-size:30px; }
+#MenuIcon { background-image: url(/icons.png); background-repeat: no-repeat; background-size: auto; background-position: -82px -98px; height: 44px; width: 40px; cursor:pointer; position:absolute; top:0px; margin:10px; }

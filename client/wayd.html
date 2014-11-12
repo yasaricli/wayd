@@ -3,14 +3,12 @@
 </head>
 
 <template name="WaydLayout">
+    {{ > HamburgerMenu }}
     <div id="Surface">
-        <div id="Header">
-            <a href="/wayds" class="textlogo fontgreat">wayds</a>
-        </div>
+        {{> header }}
         <div id="Content">
             {{ > yield }}
         </div>
-        <div id="Footer"></div>
     </div>
 </template>
 
@@ -20,5 +18,26 @@
     </div>
 </template>
 
-<template name='loading'>
+<template name="lightbox">
+    {{# if session 'lightbox' }}<div class="lightbox"></div>{{/if}}
+</template>
+
+<template name='loading'></template>
+
+<template name="header">
+    {{> lightbox }}
+    <div id="Header">
+        <a href="/wayds" class="textlogo fontgreat">wayds</a>
+        <div id="MenuIcon"></div>
+    </div>
+</template>
+
+<template name="HamburgerMenu">
+    <ul id="HamburgerMenu"> 
+        <li>
+            {{> avatar }}
+            <span class="fontpasifico">{{ currentUser.username }}</span>
+            <a href="{{ pathFor route='settings' }}" class="logout fontsans">logout</a>
+        </li>
+    </ul>
 </template>
