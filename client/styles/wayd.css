@@ -41,10 +41,12 @@ a, .link { border-bottom: solid 1px black; text-decoration: none; color: inherit
 #Wayds .wayd { padding:10px; border-bottom: 1px solid rgba(204, 204, 204, 0.42); }
 #Wayds .wayd-content { }
 #Wayds .wayd-content .avatar { width:50px; height:50px; float:left; margin-right:10px; }
-#Wayds .wayd-content img { width:100%; }
+#Wayds .avatar img { width:100%; }
 #Wayds .wayd-content .user-info { }
 #Wayds .wayd-content .timestamp { float:right; }
 #Wayds .wayd-content .text { margin-left:60px; font-size: 13px; margin-top: 5px; }
+#Wayds .waydImages { margin-left:60px; margin-top:15px; }
+#Wayds .waydImages li { float:left; margin-right:5px; }
 
 
 img.logo { outline: 0; max-width: 200px; height: auto; }
@@ -81,3 +83,7 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 #SettingsForm input, #SettingsForm textarea { width:50%; color:#666; }
 #SettingsForm textarea { width:50%; min-height:75px; }
 .avatarImg { cursor:pointer; }
+.camera-popup { z-index:99999999; }
+.reactImages { padding: 10px; background: white; }
+.reactImages li { float:left; margin-right:5px; }
+.reactImages li img { width: 100px; border-radius: 3px; }

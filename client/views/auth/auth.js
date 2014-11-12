@@ -32,7 +32,13 @@ Initialize(function() {
             return Template[Session.get("authform")];
         }
     });
-    
+   
+    Template.avatar.helpers({
+        avatar: function() {
+            return Avatars.findOne({}, { sort: { uploadedAt: -1 }});
+        }
+    });
+
     Template.login.events({
         "submit #LoginForm": function(event, t) {
             var email = Auth.check(t.find('#email')),
@@ -85,9 +91,11 @@ Initialize(function() {
         }
     });
     
-    Template.avatarUpdate.events({
-        'click .avatarImg': function(e, t) {
-            _this.takePhoto({}, function() {});
+    Template.avatar.events({
+        'click .avatar': function(e, t) {
+            _this.openPhotoLibrary(function(file) {
+                Avatars.insert(file);
+            });
         }
     });
 });

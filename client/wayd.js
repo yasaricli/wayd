@@ -2,14 +2,15 @@ Initialize(function() {
     var _this = this,
         preloadSubscriptions = ['session'];
 
-    /*
-    * enable CFS debug logging 
-    * default GET request headers 
-    */
-    FS.debug = true;
-    FS.HTTP.setHeadersForGet([
-        ['Cache-Control', 'public, max-age=31536000']
-    ]);  
+    // Configure
+    Router.configure({ 
+        loadingTemplate: 'loading',
+        waitOn: function () {
+            return _.map(preloadSubscriptions, function(sub) {
+                Meteor.subscribe(sub);
+            });
+        }
+    });
 
     // onBeforeAction
     Router.onBeforeAction(function() {
@@ -53,10 +54,6 @@ Initialize(function() {
             var kwargs = arg.hash;
             if (kwargs.format == 'relative') return moment(kwargs.date).fromNow();
             return moment(kwargs.date).format(kwargs.format);         
-        },
-        avatar: function(userId) {
-            var avatar = Avatars.findOne({ userId: userId }, { sort: { uploadedAt: -1 }});
-            return avatar ? avatar.url() : '/defaults/default-avatar.png';    
         }
     });
 });

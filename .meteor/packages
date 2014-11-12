@@ -8,13 +8,9 @@ iron:router
 dburles:collection-helpers
 accounts-ui
 accounts-password
-cfs:filesystem
 mrt:moment
-cfs:graphicsmagick
 reywood:publish-composite
-cfs:gridfs
 insecure
-cfs:standard-packages
-cfs:ui
 mdg:camera
+yasaricli:filo
 

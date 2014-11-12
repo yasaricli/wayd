@@ -11,14 +11,24 @@
     var root = this,
         InitializeCtx = function() {
             var _this = this;
+
             // Cordova utils shortcuts
             _this.takePhoto = function(options, fn) {
-                MeteorCamera.getPicture(_.extend({ allowEdit: true, quality: 75 }, options), function (error, data) {
-                    var file = new FS.File(data);
+                MeteorCamera.getPicture(_.extend({ quality: 99 }, options), function (error, data) {
+                    var file = new Filo.File(data);
+                    file.userId = Meteor.userId();
                     fn(file);
                 }); 
-            }
-            this.Helpers = function(obj) {
+            };
+
+            _this.openPhotoLibrary = function(fn) {
+                this.takePhoto({ 
+                    destinationType: navigator.camera.DestinationType.FILE_URI,
+                    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                }, fn);
+            };
+
+            _this.Helpers = function(obj) {
                 _.each(obj, function(fn, name) { Template.registerHelper(name, fn); });
             };
         };

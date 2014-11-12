@@ -4,7 +4,13 @@
             <li class="wayd clearfix">
                 <div class="wayd-content clearfix">
                     <div class="avatar">
-                        <img src="{{ avatar user._id }}">
+                        {{# if avatar }} 
+                            {{# if avatar.uploaded }}
+                                <img src="{{ avatar.url quality='99' resize='50' gravity="'Center'" crop='50, 50' }}">
+                            {{/ if}}
+                        {{ else }} 
+                            <img src="/defaults/default-avatar.png">
+                        {{/ if }}
                     </div>
                     <div class="user-info">
                         <span class="fullname fontsans">{{ user.profile.firstname }} {{ user.profile.lastname }}</span>
@@ -12,6 +18,11 @@
                     </div>
                     <div class="timestamp">{{ moment date=createdAt format='relative' }}</div>
                     <div class="text">{{ text }}</div>
+                    <ul class="waydImages clearfix">
+                        {{# each images }} 
+                            <li><img src="{{ url resize='100'}}"></li>
+                        {{/each}}
+                    </ul> 
                 </div>
             </li>
         {{ else }}
@@ -29,12 +40,18 @@
         <div class="lightbox"></div>
         <div id="pagelet">
             <div class="pagelet-header">
-                new wayd
-                <div class="share fontsans">SHARE</div>
+                new wayd <div class="share fontsans">SHARE</div>
             </div>
             <div class="pagelet-content">
                 <textarea id="title" placeholder="what are you doing ?"></textarea>
             </div>
+            {{# if pageletImages }}
+                <ul class="reactImages clearfix">
+                    {{# each pageletImages }}
+                        <li><img src="{{ data }}"></li>
+                    {{/each}}
+                </ul>
+            {{/if}}
             <ul class="pagelet-shortcuts">
                 <li class="shortcut photo"></li>
                 <li class="shortcut location"></li>

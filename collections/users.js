@@ -1,17 +1,7 @@
-var Stores = {};
-
-// set stores
-Stores.Avatars = new FS.Store.GridFS("avatars", {
-    mongoUrl: 'mongodb://selamlar:selamlar@proximus.modulusmongo.net:27017/dUr8azuq',
-    maxTries: 1
-});
-
 // Collections 
-Users = Meteor.users;
-Avatars = new FS.Collection("avatars", { stores: [Stores.Avatars] });
 
-// users helpers property
-Users.helpers({});
+Users = Meteor.users;
+Avatars = new Filo.Collection('avatars');
 
 // methods
 Meteor.methods({

@@ -45,7 +45,7 @@
 
 <template name="profile">
     <div id="Profile">
-        {{ > avatarUpdate }}
+        {{ > avatar }}
         <div class="profile-detail fontpasifico">{{ currentUser.username }}</div>
         <div class="profile-detail">{{ currentUser.profile.firstname }} {{ currentUser.profile.lastname }}</div>
         <div class="profile-detail bio">{{ currentUser.profile.bio }}</div>
@@ -55,7 +55,7 @@
 
 <template name="settings">
     <div id="Profile">
-        {{ > avatarUpdate }}
+        {{ > avatar }}
         <form id="SettingsForm" class="profile-detail">
             <div class="formline">
                 <input type="text" id="username" value="{{ currentUser.username }}" disabled>
@@ -74,8 +74,14 @@
     </div>
 </template>
 
-<template name="avatarUpdate">
+<template name="avatar">
     <div class="avatar">
-        <img src="{{ avatar currentUser._id }}" class="avatarImg">
+        {{# if avatar }} 
+            {{# if avatar.uploaded }}
+                <img src="{{ avatar.url quality='99' resize='150' gravity="'Center'" crop='150, 150' }}">
+            {{/ if}}
+        {{ else }} 
+            <img src="/defaults/default-avatar.png">
+        {{/ if }}
     </div>
 </template>

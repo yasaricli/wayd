@@ -25,6 +25,11 @@ Meteor.publishComposite('wayds', {
             find: function(wayd) {
                 return Avatars.find({ userId: wayd.userId });
             }
+        },
+        {
+            find: function(wayd) {
+                return WaydImages.find({ waydId: wayd._id });
+            }
         }
     ]
 });
