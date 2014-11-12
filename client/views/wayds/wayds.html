@@ -20,7 +20,11 @@
                     <div class="text">{{ text }}</div>
                     <ul class="waydImages clearfix">
                         {{# each images }} 
-                            <li><img src="{{ url resize='100'}}"></li>
+                            {{# if uploaded }}
+                                <li>
+                                    <img src="{{ url resize='100' quality='99'}}">
+                                </li>
+                            {{/if}}
                         {{/each}}
                     </ul> 
                 </div>

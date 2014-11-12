@@ -66,11 +66,12 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 
 .pageletClick { width:50px; height:50px; background-color:#0060c0; position:fixed; text-align: center; color: white; font-size: 66px; line-height: 31px; bottom:20px; right:20px; cursor:pointer; border-bottom:0px; }
 .lightbox { top: 0; left: 0; width: 100%; height: 100%; z-index: 1042; overflow: hidden; position: fixed; background: rgba(11, 11, 11, 0.74);  }
-.pagelet-header { background-color: #4ea1e0; /* height: 120px; */ color: white; padding: 13px; position:relative; }
+.pagelet-header { background-color: #4ea1e0; /* height: 120px; */ color: white; padding: 13px; position:relative; -webkit-border-top-left-radius: 15px; -moz-border-radius-topleft: 15px; border-top-left-radius: 15px; }
 .pagelet-content { background-color:white; padding:10px; }
-.pagelet-shortcuts { background-color:#f6f5f5; height:40px; border-top:1px solid #e0e0e0; }
+.pagelet-shortcuts { background-color:#f6f5f5; height:40px; border-top:1px solid #e0e0e0; -webkit-border-bottom-right-radius: 15px; -moz-border-radius-topleft: 10px; border-bottom-right-radius: 15px; }
 #title { width: 100%; resize: none; border: 0px; outline: none; font-size: 15px; min-height:80px; }
-.share { position: absolute; right: 0px; line-height: 44px; top: 0px; background: #0060c0; padding: 0 20px 0 20px; font-weight: bold; }
+.share { position: absolute; right: 0px; line-height: 44px; top: 0px; background: #0060c0; padding: 0 20px 0 20px; font-weight: bold; cursor:pointer; }
+.share:hover { background-color:#0258AE; }
 #pagelet { width:90%; position:absolute; z-index:9999; top:0px; margin: auto; left: 0px; right: 0px; }
 
 .bio { font-size:13px; margin-top:10px; }

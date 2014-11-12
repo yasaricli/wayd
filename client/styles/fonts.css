@@ -2,9 +2,9 @@
 *
 * Fonts media 
 */
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-@import url(https://fonts.googleapis.com/css?family=Lobster|Great+Vibes|Pacifico|Oswald:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
+@import url(//fonts.googleapis.com/css?family=Oswald);
+@import url(//fonts.googleapis.com/css?family=Lobster|Great+Vibes|Pacifico|Oswald:400,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:700,600,400);
 @font-face {font-family: 'fontnormal';src: url('/fonts/fontnormal.eot');src:url('/fonts/fontnormal.svg#proxima_nova_rgregular') format('svg'), url('/fonts/fontnormal.eot?#iefix') format('embedded-opentype'),url('/fonts/fontnormal.woff') format('woff'),url('/fonts/fontnormal.ttf') format('truetype');font-weight: normal;font-style: normal; }
 
 .fontnormal { font-family:'fontnormal'; }
