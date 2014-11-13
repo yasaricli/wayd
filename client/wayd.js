@@ -14,17 +14,23 @@ Initialize(function() {
 
     // onBeforeAction
     Router.onBeforeAction(function() {
-        if (!Meteor.userId()) {
-            // if the user is not logged in, render the Login template
-            this.layout('AuthLayout');
-            this.render('auth');
-        } else { 
-            /*
-            * otherwise don't hold up the rest of hooks or our route/action function
-            * from running 
-            */
-            this.layout('WaydLayout');
-            this.next(); 
+        // isCordova then change layout render index page
+        if (Meteor.isCordova) {
+            if (!Meteor.userId()) {
+                // if the user is not logged in, render the Login template
+                this.layout('MobileAuthLayout');
+                this.render('auth');
+            } else { 
+                /*
+                * otherwise don't hold up the rest of hooks or our route/action function
+                * from running 
+                */
+                this.layout('MobileWaydLayout');
+                this.next(); 
+            }
+        } else {
+            this.layout('BrowserLayout');
+            this.render('index');
         }
     });
 

@@ -2,22 +2,32 @@
   <title>wayd</title>
 </head>
 
-<template name="WaydLayout">
+<template name="BrowserLayout">
+    <div id="BrowserSurface">
+        <div id="BrowserHeader"></div>
+        <div id="BrowserContent">
+            {{> yield }}
+        </div>
+        <div id="BrowserFooter"></div>
+    </div>
+</template>
+
+<template name="MobileWaydLayout">
     {{> lightbox }}
     {{ > HamburgerMenu }}
-    <div id="Surface">
-        <div id="Header">
+    <div id="MobileSurface">
+        <div id="MobileHeader">
             <a href="/wayds" class="textlogo fontgreat">wayds</a>
             {{ > HamburgerMenuButton }}
         </div>
-        <div id="Content">
+        <div id="MobileContent">
             {{ > yield }}
         </div>
     </div>
 </template>
 
-<template name="AuthLayout">
-    <div id="Surface">
+<template name="MobileAuthLayout">
+    <div id="MobileSurface">
         {{ > yield }}
     </div>
 </template>
