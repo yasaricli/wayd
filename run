@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export MONGO_URL='mongodb://localhost:27017/wayd'
+export ROOT_URL='https://wayd.in'
+export DISABLE_WEBSOCKETS=true
+meteor run --production --port $@

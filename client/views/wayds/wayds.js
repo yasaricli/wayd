@@ -54,7 +54,8 @@ Initialize(function() {
             return Wayds.find({}, { sort: { createdAt: -1 }});
         },
         avatar: function() {
-            return Avatars.findOne({}, { sort: { uploadedAt: -1 }});
+            var user = this.user();
+            return Avatars.findOne({ userId: user._id });
         }
     });  
 });
