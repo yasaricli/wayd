@@ -7,7 +7,15 @@ Initialize(function() {
     Session.setDefault('pagelet', false);
     Session.setDefault('pageletClick', true);
    
-    Template.wayds.events({ });
+    Template.wayds.events({ 
+        'click .likeButton': function(e, t) {
+            var filter = { waydId: this._id , userId: Meteor.userId() };
+            var like = WaydLikes.findOne(filter);
+            if (like) { WaydLikes.remove(like._id) } else {
+                WaydLikes.insert(filter);
+            }
+        }  
+    });
     
     Template.pagelet.events({
         'click .pageletClick': function(e, t) {
@@ -52,6 +60,9 @@ Initialize(function() {
     Template.wayds.helpers({
         wayds: function() {
             return Wayds.find({}, { sort: { createdAt: -1 }});
+        },
+        hasLike: function() {
+            return !!WaydLikes.findOne({ userId: Meteor.userId(), waydId: this._id });
         },
         avatar: function() {
             var user = this.user();

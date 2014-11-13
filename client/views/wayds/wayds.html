@@ -18,6 +18,19 @@
                     </div>
                     <div class="timestamp">{{ moment date=createdAt format='relative' }}</div>
                     <div class="text">{{ text }}</div>
+                    <div class="likes">
+                        {{# if hasLike }}
+                            <span class="icon likeButton like"></span>
+                        {{ else }}
+                            <span class="icon likeButton unlike"></span>
+                        {{ /if }}
+                        {{# if likes.count }}
+                            <span class="likeCount"> + {{ likes.count }}</span>
+                        {{/if}}
+                        {{# each likes }} 
+                            {{ user.avatar._id }}
+                        {{/each}}
+                    </div>
                     <ul class="waydImages clearfix">
                         {{# each images }} 
                             {{# if uploaded }}

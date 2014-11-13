@@ -30,6 +30,11 @@ Meteor.publishComposite('wayds', {
             find: function(wayd) {
                 return WaydImages.find({ waydId: wayd._id });
             }
+        },
+        {
+            find: function(wayd) {
+                return WaydLikes.find({ waydId: wayd._id });
+            }
         }
     ]
 });

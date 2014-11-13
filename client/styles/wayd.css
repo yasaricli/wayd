@@ -108,3 +108,11 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 #HamburgerMenu li span { font-size:30px; }
 #HamburgerMenuButton { background-image: url(/icons.png); background-repeat: no-repeat; background-size: auto; background-position: -82px -98px; height: 44px; width: 40px; cursor:pointer; position:absolute; top:0px; margin:10px; }
 #HamburgerMenuOverlay { position:fixed; background-color:#373e4d; width:100%; height:100%; z-index: 999; opacity:0.6; display:none; }
+
+.likes { margin-left:60px; margin-top:10px; position:relative; }
+
+.icon { background-image: url(/icons2.png); background-repeat: no-repeat; display:block; cursor:pointer; }
+.icon.unlike { width:20px; height:20px; background-position: -253px -148px;  }
+.icon.like { width:20px; height:20px; background-position: -274px -148px; }
+
+.likeCount { position:absolute; top:3px; left:26px; font-size:13px; }

@@ -1,7 +1,7 @@
 var HamburgerMenu =  {
     animate: function(menuPx, surfacePx, complete) {
         var menu = $("#HamburgerMenu"),
-            surface = $('#Surface'),
+            surface = $('#MobileSurface'),
             complete = complete || function() {};
         menu.animate({ left: menuPx }, { duration: 100, complete: complete });
         surface.animate({ left: surfacePx }, { duration: 100 });

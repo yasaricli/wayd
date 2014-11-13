@@ -1,6 +1,7 @@
 Wayds = new Mongo.Collection('wayds');
 WaydImages = new Filo.Collection('wayd_images');
-Comments = new Mongo.Collection("comments");
+WaydLikes = new Mongo.Collection('wayd_likes');
+WaydComments = new Mongo.Collection("wayd_comments");
 
 Meteor.methods({
     newWayd: function(obj) {
@@ -21,5 +22,17 @@ Wayds.helpers({
     },
     images: function() {
         return WaydImages.find({ waydId: this._id }); 
+    },
+    likes: function() {
+        return WaydLikes.find({ waydId: this._id });
+    }
+});
+
+WaydLikes.helpers({
+    user: function() {
+        return Users.findOne({ _id: this.userId });
+    },
+    wayd: function() {
+        return Wayds.findOne({ waydId: this.waydId });
     }
 });
