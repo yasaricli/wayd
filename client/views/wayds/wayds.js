@@ -55,7 +55,7 @@ Initialize(function() {
         },
         avatar: function() {
             var user = this.user();
-            return Avatars.findOne({ userId: user._id });
+            return Avatars.findOne({ userId: user._id }, { sort: { uploadedAt: -1 }});
         }
     });  
 });

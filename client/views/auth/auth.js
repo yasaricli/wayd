@@ -35,7 +35,7 @@ Initialize(function() {
    
     Template.avatar.helpers({
         avatar: function() {
-            return Avatars.findOne({}, { sort: { uploadedAt: -1 }});
+            return Avatars.findOne({ userId: Meteor.userId() }, { sort: { uploadedAt: -1 }});
         }
     });
 
