@@ -37,7 +37,7 @@ Initialize(function() {
             }
         },
         'click .photo': function(e, t) {
-            _this.takePhoto({}, function(data) {
+            _this.openPhotoLibrary(function(data) {
                 ReactPageletImages.insert(data);
             });
         }
