@@ -44,7 +44,10 @@ Initialize(function() {
             var email = Auth.check(t.find('#email')),
                 password = Auth.check(t.find('#password'));
             if (email && password) {
-                Meteor.loginWithPassword(email, password, Auth.errCall);
+                Meteor.loginWithPassword(email, password, function(err) {
+                    if (err) Auth.errCall(err);
+                    Router.go('/');
+                });
             }
             event.preventDefault();
         },
@@ -68,7 +71,10 @@ Initialize(function() {
                     username: username,
                     email: email,
                     password: password
-                }, Auth.errCall);
+                }, function() {
+                    if (err) Auth.errCall(err);
+                    Router.go('/settings');
+                });
             }
             event.preventDefault();
         },
