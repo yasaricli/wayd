@@ -3,9 +3,13 @@
 </head>
 
 <template name="WaydLayout">
+    {{> lightbox }}
     {{ > HamburgerMenu }}
     <div id="Surface">
-        {{> header }}
+        <div id="Header">
+            <a href="/wayds" class="textlogo fontgreat">wayds</a>
+            {{ > HamburgerMenuButton }}
+        </div>
         <div id="Content">
             {{ > yield }}
         </div>
@@ -23,21 +27,3 @@
 </template>
 
 <template name='loading'></template>
-
-<template name="header">
-    {{> lightbox }}
-    <div id="Header">
-        <a href="/wayds" class="textlogo fontgreat">wayds</a>
-        <div id="MenuIcon"></div>
-    </div>
-</template>
-
-<template name="HamburgerMenu">
-    <ul id="HamburgerMenu"> 
-        <li>
-            {{> avatar }}
-            <span class="fontpasifico">{{ currentUser.username }}</span>
-            <a href="{{ pathFor route='settings' }}" class="logout fontsans">logout</a>
-        </li>
-    </ul>
-</template>

@@ -92,7 +92,7 @@ Initialize(function() {
     });
     
     Template.avatar.events({
-        'click .avatar': function(e, t) {
+        'click .avatar:not(.notClick)': function(e, t) {
             _this.openPhotoLibrary(function(file) {
                 Avatars.insert(file);
             });

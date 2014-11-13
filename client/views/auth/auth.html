@@ -75,7 +75,7 @@
 </template>
 
 <template name="avatar">
-    <div class="avatar">
+    <div class="avatar {{ extraclass }}">
         {{# if avatar }} 
             {{# if avatar.uploaded }}
                 <img src="{{ avatar.url quality='99' resize='150' gravity="'Center'" crop='150, 150' }}">

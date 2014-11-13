@@ -1,0 +1,13 @@
+<template name="HamburgerMenu">
+    <ul id="HamburgerMenu"> 
+        <li>
+            {{> avatar extraclass='notClick'}}
+            <span class="fontpasifico">{{ currentUser.username }}</span>
+            <a href="{{ pathFor route='settings' }}" class="logout fontsans">logout</a>
+        </li>
+    </ul>
+</template>
+
+<template name="HamburgerMenuButton">
+    <div id="HamburgerMenuButton"></div>
+</template>

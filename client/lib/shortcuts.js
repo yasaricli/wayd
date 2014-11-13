@@ -47,21 +47,6 @@
                 }
             });
 
-            Template.HamburgerMenu.events({
-                'click .logout': function() {
-                    Meteor.logout();
-                }
-            });
-
-            Template.header.events({
-                'click #MenuIcon': function(e, t) {
-                    var menu = $("#HamburgerMenu"),
-                        surface = $('#Surface');
-                    menu.animate({ left: '0px' }, 'fast');
-                    surface.animate({ left: '200px'}, 'fast');
-                }
-            });
-
             _this.Helpers = function(obj) {
                 _.each(obj, function(fn, name) { Template.registerHelper(name, fn); });
             };
