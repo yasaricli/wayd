@@ -83,8 +83,8 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 .shortcut.location:hover { background-position: 0 -280px; }
 .profileEdit { background: #93cc76; color: white; padding: 10px; width: 50%; margin: 10px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; }
 .logout { background: #B61E4C; color: white; padding: 10px; width: 50%; margin: 10px auto; font-size: 20px; cursor: pointer; font-weight:bold; border:0px; margin-top:10px; display:block; }
-#SettingsForm input, #SettingsForm textarea { width:50%; color:#666; }
-#SettingsForm textarea { width:50%; min-height:75px; }
+#SettingsForm input, #SettingsForm textarea { width:75%; color:#666; }
+#SettingsForm textarea { width:75%; min-height:100px; }
 .avatarImg { cursor:pointer; }
 .camera-popup { z-index:99999999; }
 .reactImages { padding: 10px; background: white; }
@@ -95,3 +95,4 @@ img.logo { outline: 0; max-width: 200px; height: auto; }
 #HamburgerMenu li .avatar { margin-bottom:10px; }
 #HamburgerMenu li span { font-size:30px; }
 #HamburgerMenuButton { background-image: url(/icons.png); background-repeat: no-repeat; background-size: auto; background-position: -82px -98px; height: 44px; width: 40px; cursor:pointer; position:absolute; top:0px; margin:10px; }
+#HamburgerMenuOverlay { position:fixed; background-color:#373e4d; width:100%; height:100%; z-index: 999; opacity:0.6; display:none; }

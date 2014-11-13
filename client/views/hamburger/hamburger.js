@@ -8,12 +8,20 @@ var HamburgerMenu =  {
         return menu;
     },
     show: function(complete) {
-        var animate = this.animate('0px', '200px', complete);
+        var body = $('body'),
+            animate = this.animate('0px', '200px', complete),
+            overlay = $('#HamburgerMenuOverlay');
+        body.css({'overflow': 'hidden'});
         animate.addClass('opened');
+        overlay.show();
     },
     hide: function(complete) {
-        var animate = this.animate('-200px', '0px', complete);
+        var body = $('body'),
+            animate = this.animate('-200px', '0px', complete),
+            overlay = $('#HamburgerMenuOverlay');
+        body.css({'overflow': 'auto'});
         animate.removeClass('opened');
+        overlay.hide();
     },
     toggle: function() {
         var menu = $("#HamburgerMenu"),
@@ -27,6 +35,9 @@ var HamburgerMenu =  {
 };
 
 Template.HamburgerMenu.events({
+    'click #HamburgerMenuOverlay': function() {
+        HamburgerMenu.toggle();
+    },
     'click .avatar': function(e, t) {
         HamburgerMenu.hide(function() {
             Router.go("/");
