@@ -10,6 +10,15 @@ Meteor.methods({
             createdAt: new Date()
         }, obj));
         return waydId;
+    },
+    newWaydLike: function(waydId) {
+        var filter = { userId: this.userId, waydId: waydId },
+            like = WaydLikes.findOne(filter);
+        if (like) { 
+            WaydLikes.remove(like._id);
+        } else { 
+            WaydLikes.insert(filter); 
+        }
     }
 });
 

@@ -4,13 +4,9 @@
             <li class="wayd clearfix">
                 <div class="wayd-content clearfix">
                     <div class="avatar">
-                        {{# if avatar }} 
-                            {{# if avatar.uploaded }}
-                                <img src="{{ avatar.url quality='99' resize='50' gravity="'Center'" crop='50, 50' }}">
-                            {{/ if}}
-                        {{ else }} 
-                            <img src="/defaults/default-avatar.png">
-                        {{/ if }}
+                        {{# if user.avatar.uploaded }}
+                            <img src="{{ user.avatar.url quality='99' resize='50' gravity="'Center'" crop='50, 50' }}">
+                        {{/ if}}
                     </div>
                     <div class="user-info">
                         <span class="fullname fontsans">{{ user.profile.firstname }} {{ user.profile.lastname }}</span>
@@ -18,28 +14,28 @@
                     </div>
                     <div class="timestamp">{{ moment date=createdAt format='relative' }}</div>
                     <div class="text">{{ text }}</div>
+                    {{# if images.count }}
+                        <ul class="waydImages clearfix">
+                            {{# each images }} 
+                                {{# if uploaded }}
+                                    <li>
+                                        <img src="{{ url resize='100' quality='99'}}">
+                                    </li>
+                                {{/if}}
+                            {{/each}}
+                        </ul> 
+                    {{/if}}
                     <div class="likes">
-                        {{# if hasLike }}
-                            <span class="icon likeButton like"></span>
-                        {{ else }}
-                            <span class="icon likeButton unlike"></span>
-                        {{ /if }}
-                        {{# if likes.count }}
-                            <span class="likeCount"> + {{ likes.count }}</span>
-                        {{/if}}
+                        <span class="likeButton fontpasifico">
+                            {{# if hasLike }}unlike{{ else }}like{{ /if }}
+                            {{# if likes.count }} <b>+ {{ likes.count }}</b> {{/if}}
+                        </span>
+                    </div>
+                    <div class="likeUsers clearfix">
                         {{# each likes }} 
-                            {{ user.avatar._id }}
+                            <img src="{{ user.avatar.url quality='99' resize='25' gravity="'Center'" crop='25, 25' }}" width=25>
                         {{/each}}
                     </div>
-                    <ul class="waydImages clearfix">
-                        {{# each images }} 
-                            {{# if uploaded }}
-                                <li>
-                                    <img src="{{ url resize='100' quality='99'}}">
-                                </li>
-                            {{/if}}
-                        {{/each}}
-                    </ul> 
                 </div>
             </li>
         {{ else }}

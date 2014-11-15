@@ -1,11 +1,16 @@
 // Collections 
-
 Users = Meteor.users;
 Avatars = new Filo.Collection('avatars');
 
 Users.helpers({
     avatar: function() {
-        return Avatars.findOne({ userId: this._id });
+        var avatar = Avatars.findOne({ userId: this._id }, { sort: { uploadedAt: -1 }});
+        return avatar ? avatar : {
+            uploaded: function() { return true; },
+            url: function() {
+                return '/defaults/default-avatar.png'
+            }
+        }
     }
 });
 

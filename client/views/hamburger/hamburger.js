@@ -43,7 +43,8 @@ Template.HamburgerMenu.events({
             Router.go("/");
         });
     },
-    'click .logout': function() {
+    'click .logout': function(e) {
+        e.preventDefault();
         HamburgerMenu.hide(function() {
             Meteor.logout();
         });

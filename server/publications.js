@@ -34,7 +34,19 @@ Meteor.publishComposite('wayds', {
         {
             find: function(wayd) {
                 return WaydLikes.find({ waydId: wayd._id });
-            }
+            },
+            children: [
+                {
+                    find: function(like, wayd) {
+                        return Users.find({ _id: like.userId });
+                    }
+                },
+                {
+                    find: function(like) {
+                        return Avatars.find({ userId: like.userId });
+                    }
+                }    
+            ]
         }
     ]
 });

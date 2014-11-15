@@ -71,7 +71,7 @@ Initialize(function() {
                     username: username,
                     email: email,
                     password: password
-                }, function() {
+                }, function(err) {
                     if (err) Auth.errCall(err);
                     Router.go('/settings');
                 });
@@ -91,7 +91,7 @@ Initialize(function() {
                 'profile.firstname': t.find('#firstname').value,
                 'profile.lastname': t.find('#lastname').value,
                 'profile.bio': t.find('#bio').value
-            }, function() {
+            }, function(err) {
                 Router.go("/");
             });
         }

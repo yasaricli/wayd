@@ -1,7 +1,6 @@
 Initialize(function() {
-    var _this = this;
-    
-    ReactPageletImages = new Mongo.Collection(null);
+    var _this = this,
+        ReactPageletImages = new Mongo.Collection(null);
 
     // Default sessions
     Session.setDefault('pagelet', false);
@@ -9,11 +8,7 @@ Initialize(function() {
    
     Template.wayds.events({ 
         'click .likeButton': function(e, t) {
-            var filter = { waydId: this._id , userId: Meteor.userId() };
-            var like = WaydLikes.findOne(filter);
-            if (like) { WaydLikes.remove(like._id) } else {
-                WaydLikes.insert(filter);
-            }
+            Meteor.call('newWaydLike', this._id);
         }  
     });
     
@@ -63,10 +58,6 @@ Initialize(function() {
         },
         hasLike: function() {
             return !!WaydLikes.findOne({ userId: Meteor.userId(), waydId: this._id });
-        },
-        avatar: function() {
-            var user = this.user();
-            return Avatars.findOne({ userId: user._id }, { sort: { uploadedAt: -1 }});
         }
     });  
 });
