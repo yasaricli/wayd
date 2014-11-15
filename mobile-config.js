@@ -3,7 +3,7 @@ App.info({
   description: 'A social platform',
   author: 'Yasar icli',
   email: 'hello@yasaricli.com',
-  website: 'http://wayd.in',
+  website: 'https://wayd.in',
   version: '0.0.1'
 });
 

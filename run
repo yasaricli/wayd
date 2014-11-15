@@ -1,6 +1,27 @@
 #!/bin/bash
 
-export MONGO_URL='mongodb://localhost:27017/wayd'
-export ROOT_URL='https://wayd.in'
+APP="$(pwd)/.build/bundle"
+SCRIPT="$APP/main.js"
+PID="$APP/wayd.pid"
+LOG="$APP/wayd.log"
+
+# exports 
+export PORT=4000
+export MONGO_URL="mongodb://localhost:27017/wayd"
+export ROOT_URL="https://wayd.in"
 export DISABLE_WEBSOCKETS=true
-meteor run --production --port $@
+
+#remove .build 
+rm -rf .build 
+
+# meteor build  and extract
+meteor build .build --server "$ROOT_URL:$PORT"
+cd .build
+tar -xvf wayd.tar.gz
+
+# npm install dep
+cd bundle/programs/server
+npm install
+
+forever stop $SCRIPT
+forever start -p $APP --pidFile $PID -l $LOG -a -d $SCRIPT

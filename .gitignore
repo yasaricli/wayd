@@ -3,4 +3,4 @@
 *.swp
 
 # private file
-private/*
+.build/*
